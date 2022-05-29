@@ -1,9 +1,9 @@
 [PT-BR]
 
-# Projeto FullStack Controle Financeiro Pessoal - Bootcamp IGTI Desafio Final
+# Projeto II - TCC UCAM - Amigo do Pet
 
-Professor: Raphael Gomide.<br>
-Aluno: Felipe Marques.
+Orientadora: Rosana Fernandes Osório.<br>
+Alunos: Charles, Thadeu e Jhon.
 
 ## :memo: Status:
 
@@ -17,8 +17,8 @@ Aluno: Felipe Marques.
 
 ## Imagem do Projeto
 
-![Controle de Notas](public/CFP_App.png)
+![Controle de Notas]()
 
 ## :octocat: Deploy:
 
-[Vercel](https://cfp-app.vercel.app/)
+[Vercel]()
