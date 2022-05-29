@@ -1,18 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  height: auto;
-  background: black;
-  z-index: 10;
-`;
 
 const Title = styled.h3`
   color: teal;
@@ -21,10 +9,25 @@ const Title = styled.h3`
 
 export default function Header() {
   return (
-    <Wrapper>
-      <div className="nav-wrapper">
-        <Title>Controle Finaceiro Pessoal</Title>
-      </div>
-    </Wrapper>
+    <>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Portal Amigo do Pet</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Sass</a></li>
+            <li><a href="#">Components</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Sass</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Javascript</a></li>
+        <li><a href="#">Mobile</a></li>
+      </ul>
+    </>
   );
 }
