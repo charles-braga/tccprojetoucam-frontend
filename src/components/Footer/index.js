@@ -24,16 +24,8 @@ export default function Footer() {
   return (
     <Wrapper>
       <Text>
-        Desenvolvido por{' '}
-        <a
-          href="https://t.me/Dev_felipe_marques"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: 'teal' }}
-        >
-          Felipe Marques
-        </a>{' '}
-        © 2020
+        Portal Amigo do Pet
+        © 2022
       </Text>
     </Wrapper>
   );
