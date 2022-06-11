@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TransactionDataService from '../services/transactionService.js';
+import TransactionDataService from '../services/DataService.js';
 
 export default function ModalNew({ onChange }) {
   const initialTransactionState = {
