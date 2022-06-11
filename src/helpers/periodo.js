@@ -6,7 +6,7 @@ const PERIODS = [];
 
 YEARS.forEach((year) => {
   MONTHS.forEach((month) => {
-    const period = `${year}-${month.toString().padStart(2, '0')}`;
+    const period = `${year}/${month.toString().padStart(2, '0')}`;
     PERIODS.push(period);
   });
 });

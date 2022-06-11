@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TransactionDataService from '../src/services/transactionService';
+import DataService from './services/DataService';
 import M from 'materialize-css';
 import { PERIODS } from '../src/helpers/periodo';
 
@@ -16,26 +16,25 @@ import Lancamentos from './components/info/Lancamentos';
 import './components/components.modules.css';
 
 export default function App() {
-  const [searchByDescription, setSearchBydescription] = useState('');
+  //  const [searchByDescription, setSearchBydescription] = useState('');
   const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
   const [transactions, setTransactions] = useState([]);
-  const [transaction, setTransaction] = useState([]);
+  const [adoption, setAdoption] = useState([]);
   const [dropdown, setDropdown] = useState('');
   const [statusModal, setStatusModal] = useState(false);
   const [removed, setRemoved] = useState();
 
   useEffect(() => {
-    const fetchTransactions = async () => {
-      const { data } = await TransactionDataService.getAll(
+    const fetchAdoptions = async () => {
+      const { data } = await DataService.getAll(
         currentPeriod,
-        searchByDescription
       );
       setTransactions(data);
     };
 
-    fetchTransactions();
+    fetchAdoptions();
     M.AutoInit();
-  }, [currentPeriod, searchByDescription, statusModal, removed]);
+  }, [currentPeriod, statusModal, removed]);
 
   const handlePeriodSelect = (event) => {
     setCurrentPeriod(event.target.value);
@@ -51,9 +50,9 @@ export default function App() {
     document.removeEventListener('click', closeDropdown);
   };
 
-  const handleInputDescription = (newText) => {
+  /*const handleInputDescription = (newText) => {
     setSearchBydescription(newText);
-  };
+  };*/
 
   const handleStatusModal = (status) => {
     if (status === true && statusModal === true) {
@@ -66,7 +65,7 @@ export default function App() {
   const handleAction = (action, transaction) => {
     const { _id } = transaction;
     if (action === 'delete') {
-      TransactionDataService.remove(_id)
+      DataService.remove(_id)
         .then((response) => {
           setRemoved(_id);
         })
@@ -75,7 +74,7 @@ export default function App() {
         });
     } else {
       setDropdown('show');
-      setTransaction(transaction);
+      setAdoption(transaction);
     }
   };
 
@@ -106,12 +105,12 @@ export default function App() {
             />
             <ModalUpdate
               onChange={handleStatusModal}
-              transaction={transaction}
+              transaction={adoption}
               className={dropdown}
             />
           </div>
           <div className="col s6 m9 noPadding">
-            <Filtro onChange={handleInputDescription} />
+            {/*<Filtro onChange={handleInputDescription} />*/}
           </div>
         </div>
         <Lancamentos handleAction={handleAction} transactions={transactions} />
