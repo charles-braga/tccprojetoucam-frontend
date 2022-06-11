@@ -13,7 +13,7 @@ Alunos: Charles, Thadeu e Jhon.
 
 - Criar Frontend com react para consumir dados do backend para controle de gastos financeiros.<br>
 - Aplicar CRUD na aplicação.<br>
-- Praticar os conceitos de versionamento de código e implantação pelo Heroku.<br>
+- Praticar os conceitos de versionamento de código e deployment.<br>
 
 ## Imagem do Projeto
 
