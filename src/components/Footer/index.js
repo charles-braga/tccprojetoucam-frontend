@@ -3,21 +3,22 @@ import styled from 'styled-components';
 
 const Wrapper = styled.footer`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   padding: 10px;
-  background: black;
-  height: 80px;
+  background: #1de9b6;
+  height: 50px;
   width: 100%;
   position: fixed;
   bottom: 0;
 `;
 
 const Text = styled.p`
-  color: teal;
+  color: black;
   font-size: 1.2rem;
   font-weight: 600;
+  
 `;
 
 export default function Footer() {

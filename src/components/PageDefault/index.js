@@ -12,6 +12,7 @@ const Wrapper = styled.main`
   padding-bottom: 14vh;
   padding-left: 5%;
   padding-right: 5%;
+  
 `;
 
 

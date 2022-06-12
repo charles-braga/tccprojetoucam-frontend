@@ -5,8 +5,7 @@ export default function ModalUpdate({ onChange, transaction }) {
   const { _id, type, description, category, value, yearMonthDay } = transaction;
 
   const controlledDate = {
-    minValue: '2019-01-01',
-    maxValue: '2021-12-31',
+    minValue: '2019-01-01'
   };
   const [updateTransaction, setUpdateTransaction] = useState([]);
   const [submitted, setSubmitted] = useState(false);
@@ -30,14 +29,14 @@ export default function ModalUpdate({ onChange, transaction }) {
     handleDate();
   }, [controlledDate, updateTransaction]);
 
-  const handleRadio = (event) => {
+  /*const handleRadio = (event) => {
     const { name, value } = event.target;
     let type = '-';
     if (value === 'Receita') {
       type = '+';
     }
     setUpdateTransaction({ ...updateTransaction, [name]: type });
-  };
+  };*/
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -85,7 +84,7 @@ export default function ModalUpdate({ onChange, transaction }) {
       {submitted || noUpdate ? (
         <div id="modalUpdate" className="modal open">
           <div className="modal-title valign-wrapper">
-            <h5>Atualizar Lançamento</h5>
+            <h5>Atualizar Adoção</h5>
             <button
               onClick={handleCloseButton}
               className="modal-close waves-effect waves-red btn-flat red"
@@ -94,7 +93,7 @@ export default function ModalUpdate({ onChange, transaction }) {
             </button>
           </div>
           <div className="modal-content modal-success">
-            {submitted && <h6>Lançamento atualizado com sucesso!</h6>}
+            {submitted && <h6>Adoção atualizada com sucesso!</h6>}
             {noUpdate && <h6>Não foi registrada nenhuma nova informação!</h6>}
           </div>
           <div className="modal-footer">
@@ -119,7 +118,7 @@ export default function ModalUpdate({ onChange, transaction }) {
       ) : (
         <div id="modalUpdate" className="modal">
           <div className="modal-title valign-wrapper">
-            <h5>Atualizar Lançamento</h5>
+            <h5>Atualizar Adoção</h5>
             <button
               onClick={handleCloseButton}
               className="modal-close waves-effect waves-red btn-flat red"
@@ -128,7 +127,7 @@ export default function ModalUpdate({ onChange, transaction }) {
             </button>
           </div>
           <div className="modal-content">
-            {type === '-' ? (
+            {/*type === '-' ? (
               <div className="tipoLancamento form-group">
                 <label>
                   <input
@@ -176,7 +175,7 @@ export default function ModalUpdate({ onChange, transaction }) {
                   <span className="teal-text">Receita</span>
                 </label>
               </div>
-            )}
+            )*/}
 
             <div className="input-field">
               <input
@@ -194,7 +193,7 @@ export default function ModalUpdate({ onChange, transaction }) {
                 }}
                 htmlFor="description_"
               >
-                Descrição
+                Nome
               </label>
             </div>
             <div className="input-field">
@@ -213,15 +212,15 @@ export default function ModalUpdate({ onChange, transaction }) {
                 }}
                 htmlFor="category"
               >
-                Categoria
+                Nome do Cão
               </label>
             </div>
             <div className="row valign-wrapper noMargin">
               <div className="input-field col s6">
                 <input
                   id="value"
-                  name="value"
-                  type="number"
+                  name="raça"
+                  type="text"
                   placeholder={value}
                   onChange={handleInputChange}
                 />
@@ -233,7 +232,7 @@ export default function ModalUpdate({ onChange, transaction }) {
                   }}
                   htmlFor="value"
                 >
-                  Valor
+                  Raça
                 </label>
               </div>
               <div className="input-field col s6">
@@ -241,7 +240,6 @@ export default function ModalUpdate({ onChange, transaction }) {
                   name="yearMonthDay"
                   type="date"
                   min={minValue}
-                  max={maxValue}
                   placeholder={yearMonthDay}
                   onChange={handleInputChange}
                 />
@@ -258,7 +256,7 @@ export default function ModalUpdate({ onChange, transaction }) {
               onClick={handleSubmit}
               disabled={errorMessage.trim() !== ''}
             >
-              Salvar
+              Atualizar
             </button>
           </div>
         </div>

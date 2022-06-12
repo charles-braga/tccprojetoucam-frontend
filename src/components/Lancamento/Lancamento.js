@@ -35,7 +35,7 @@ export default function Lancamento({ handleAction, transaction }) {
             className="material-icons "
             id="update"
           >
-            create
+            update
           </WrapperTransactionContainer.icons>
         </span>
         <span className="waves-effect waves-light" onClick={handleActionButton}>
