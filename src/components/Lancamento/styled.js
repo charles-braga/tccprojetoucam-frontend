@@ -31,9 +31,8 @@ WrapperTransactionContainer.description = styled.div`
 
 WrapperTransactionContainer.strong = styled.strong`
   font-size: large;
-  font-style: italic;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-family: sans-serif;
   font-weight: bolder;
 `;
 

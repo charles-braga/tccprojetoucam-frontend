@@ -3,9 +3,10 @@ import { WrapperTransactionContainer } from './styled.js';
 
 export default function Lancamento({ handleAction, transaction }) {
 
-  const { day, animalId, status } = transaction;
+  const { day, animalName, userName, status } = transaction;
   const color = status === 'nao-realizada' ? 'rgb(240, 161, 168)' : 'rgb(161, 240, 220)';
   const icon = status === 'realizada' ? 'check' : 'block'
+  const adoptionFinished = status === 'realizada' ? 'realizada' : 'não finalizada'
 
   const handleActionButton = (event) => {
     const action = event.target.id;
@@ -21,10 +22,21 @@ export default function Lancamento({ handleAction, transaction }) {
         <span>{day.toString().padStart(2, '0')}</span>
       </WrapperTransactionContainer.index>
       <WrapperTransactionContainer.description className="col s8 m10">
-        <WrapperTransactionContainer.strong>
-          {animalId}
-        </WrapperTransactionContainer.strong>
-        <span>{status}</span>
+        <span>Cão adotado:&nbsp;
+          <WrapperTransactionContainer.strong>
+            {animalName}
+          </WrapperTransactionContainer.strong>
+        </span>
+        <span>Adotado por:&nbsp;
+          <WrapperTransactionContainer.strong>
+            {userName}
+          </WrapperTransactionContainer.strong>
+        </span>
+        <span>Status: &nbsp;
+          <WrapperTransactionContainer.strong>
+            {adoptionFinished}
+          </WrapperTransactionContainer.strong>
+        </span>
       </WrapperTransactionContainer.description>
       <WrapperTransactionContainer.buttons className="col s2 m1 noPadding">
         {/*<span
@@ -42,7 +54,6 @@ export default function Lancamento({ handleAction, transaction }) {
         <span className="waves-effect waves-light" onClick={handleActionButton}>
           <WrapperTransactionContainer.icons
             className="material-icons"
-            id="delete"
           >
             {icon}
           </WrapperTransactionContainer.icons>

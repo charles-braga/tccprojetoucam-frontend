@@ -80,7 +80,6 @@ export default function App() {
 
   return (
     <PageDefault>
-      <div>isso aqui </div>
       <div className="container">
         <div className="row">
           <div className={`col s4 offset-s4`}>
