@@ -38,8 +38,6 @@ const getAllDogs = () => {
 };
 //Fim das funções de manipulação dos cães ************
 
-
-
 //Inicio das funções de persistência de usuários ************
 const newUser = (data) => {
   return axios.post(
