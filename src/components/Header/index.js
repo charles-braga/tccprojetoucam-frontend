@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const WrapperLogoName = styled.a`
+  font-family: 
+`;
 
 export default function Header() {
   return (
