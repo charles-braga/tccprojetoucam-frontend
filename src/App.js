@@ -80,6 +80,7 @@ export default function App() {
 
   return (
     <PageDefault>
+      <div>isso aqui </div>
       <div className="container">
         <div className="row">
           <div className={`col s4 offset-s4`}>
@@ -97,12 +98,12 @@ export default function App() {
         <PainelInfo transactions={transactions} />
         <div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
-            <Button onClick={showDropdown} />
-            <ModalNew
+            {/*<Button onClick={showDropdown} />*/}
+            {/*<ModalNew
               onChange={handleStatusModal}
               updateAdoptions={false}
               className={dropdown}
-            />
+            />*/}
             <ModalUpdate
               onChange={handleStatusModal}
               transaction={adoption}

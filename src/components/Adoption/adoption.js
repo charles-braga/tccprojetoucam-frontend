@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import DataService from './services/DataService';
+import DataService from '../../services/DataService';
 import M from 'materialize-css';
-import { PERIODS } from '../src/helpers/periodo';
+import { PERIODS } from '../../helpers/periodo';
 
 //Components
-import PageDefault from './components/PageDefault/index';
-import PainelInfo from './components/info/PainelInfo';
+import PageDefault from '../PageDefault/index';
+import PainelInfo from '../info/PainelInfo';
 //import Filtro from './components/Filtro/Filtro';
-import Button from './components/Button';
-import ModalNew from './components/ModalNew';
-import ModalUpdate from './components/ModalUpdate';
-import Lancamentos from './components/info/Lancamentos';
+import Button from '../Button';
+import ModalNew from '../ModalNew';
+import ModalUpdate from '../ModalUpdate';
+import Lancamentos from '../info/Lancamentos';
 
 //css Modules
 import './components/components.modules.css';
 
-export default function App() {
+export default function Adoption() {
   //  const [searchByDescription, setSearchBydescription] = useState('');
   const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
   const [transactions, setTransactions] = useState([]);
@@ -97,12 +97,12 @@ export default function App() {
         <PainelInfo transactions={transactions} />
         <div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
-            <Button onClick={showDropdown} />
-            <ModalNew
-              onChange={handleStatusModal}
-              updateAdoptions={false}
-              className={dropdown}
-            />
+            {/*<Button onClick={showDropdown} />*/}
+            {/*<ModalNew
+            onChange={handleStatusModal}
+            updateAdoptions={false}
+            className={dropdown}
+          />*/}
             <ModalUpdate
               onChange={handleStatusModal}
               transaction={adoption}
