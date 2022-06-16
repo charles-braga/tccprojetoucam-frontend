@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from '../Header';
 import Footer from '../Footer';
-//import bannerMain from '../../../assets/img.jpg';
 
 const Wrapper = styled.main`
   flex: 1;
@@ -12,7 +11,6 @@ const Wrapper = styled.main`
   padding-bottom: 14vh;
   padding-left: 5%;
   padding-right: 5%;
-  
 `;
 
 
@@ -20,7 +18,6 @@ export default function PageDefault({ children }) {
   return (
     <>
       <Header />
-      {/*}      <img src={bannerMain} / > */}
       <Wrapper>{children}</Wrapper>
       <Footer />
     </>
