@@ -3,7 +3,7 @@ import DataService from '../services/DataService.js';
 
 export default function ModalUpdateUser({ onChange, User }) {
   console.log(User);
-  const { _id, name, password, email, birthDate, contact, address } = User;
+  const { _id } = User;
 
   const controlledDate = {
     minValue: '1940-01-01'
@@ -78,7 +78,7 @@ export default function ModalUpdateUser({ onChange, User }) {
     setNoUpdate(false);
   };
 
-  const { minValue, maxValue } = controlledDate;
+  const { minValue } = controlledDate;
 
   return (
     <div className="submit-form">
@@ -185,6 +185,7 @@ export default function ModalUpdateUser({ onChange, User }) {
                 type="text"
                 placeholder={User.name}
                 onChange={handleInputChange}
+                autoFocus
               />
               <label
                 style={{
@@ -202,8 +203,8 @@ export default function ModalUpdateUser({ onChange, User }) {
                 id="password_"
                 name="password"
                 type="password"
-                placeholder={User.password}
                 onChange={handleInputChange}
+                autoFocus
               />
               <label
                 style={{
@@ -224,6 +225,7 @@ export default function ModalUpdateUser({ onChange, User }) {
                 type="text"
                 placeholder={User.address}
                 onChange={handleInputChange}
+                autoFocus
               />
               <label
                 style={{
@@ -243,6 +245,7 @@ export default function ModalUpdateUser({ onChange, User }) {
                 type="text"
                 placeholder={User.email}
                 onChange={handleInputChange}
+                autoFocus
               />
               <label
                 style={{
@@ -264,6 +267,7 @@ export default function ModalUpdateUser({ onChange, User }) {
                   type="text"
                   placeholder={User.contact}
                   onChange={handleInputChange}
+                  autoFocus
                 />
                 <label
                   style={{
@@ -283,6 +287,7 @@ export default function ModalUpdateUser({ onChange, User }) {
                   min={minValue}
                   value={User.birthDate}
                   onChange={handleInputChange}
+                  autoFocus
                 />
               </div>
             </div>

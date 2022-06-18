@@ -80,7 +80,6 @@ export default function App() {
 
   return (
     <PageDefault>
-      <div>Isso só aparece em adoption</div>
       <div className="container">
         <div className="row">
           <div className={`col s4 offset-s4`}>

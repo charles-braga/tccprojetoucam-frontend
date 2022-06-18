@@ -16,12 +16,12 @@ export default function CardUser({ handleAction, sendUser }) {
   return (
     <WrapperTransactionContainer
       style={{ background: color }}
-      className=" valign-wrapper"
+      className="row valign-wrapper"
     >
       {/*<WrapperTransactionContainer.index className="col s2 m1">
         <span>{day.toString().padStart(2, '0')}</span>
       </WrapperTransactionContainer.index>*/}
-      <WrapperTransactionContainer.description className="col s8 m10">
+      <WrapperTransactionContainer.description className="col s10 m10">
         <span>Nome:&nbsp;
           <WrapperTransactionContainer.strong>
             {name}
