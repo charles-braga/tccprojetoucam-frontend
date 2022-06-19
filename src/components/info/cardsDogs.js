@@ -1,17 +1,16 @@
 import React from 'react';
 import CardDog from '../CardDogs/card';
 
-export default function CardsDogs({ handleAction, sendDogs }) {
+export default function CardsDogs({ handleActionApp, sendDogs }) {
 
   const handleDogAction = (action, dog) => {
-    handleAction(action, dog);
+    handleActionApp(action, dog);
   };
 
   return (
     <div>
       {sendDogs.map((dog) => {
         const { _id } = dog;
-        console.log(dog);
 
         return (
           <CardDog

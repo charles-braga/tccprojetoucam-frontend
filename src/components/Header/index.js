@@ -8,22 +8,22 @@ const WrapperLogoName = styled.a`
 
 export default function Header() {
   return (
-    <>
-      <nav class="teal accent-3">
-        <div class="nav-wrapper black-text">
-          <Link to="/" class="brand-logo black-text">Portal Amigo do Pet</Link>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down black-text">
-            <li><Link class='black-text' to="/adoption">Adoções</Link></li>
-            <li><Link class='black-text' to="/management">Gerenciamento</Link></li>
+    <div className='navbar-fixed'>
+      <nav className="teal accent-3 ">
+        <div className="nav-wrapper black-text">
+          <Link to="/" className="brand-logo black-text">Portal Amigo do Pet</Link>
+          <a href="#" data-target="mobile-demo" className="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+          <ul className="right hide-on-med-and-down black-text">
+            <li><Link className='black-text' to="/adoption">Adoções</Link></li>
+            <li><Link className='black-text' to="/management">Gerenciamento</Link></li>
           </ul>
         </div>
 
       </nav>
-      <ul class="sidenav" id="mobile-demo">
-        <li><Link class='black-text' to="/adoption">Adoções</Link></li>
-        <li><Link class='black-text' to="/management">Gerenciamento</Link></li>
+      <ul className="sidenav" id="mobile-demo">
+        <li><Link className='black-text' to="/adoption">Adoções</Link></li>
+        <li><Link className='black-text' to="/management">Gerenciamento</Link></li>
       </ul>
-    </>
+    </div>
   );
 }

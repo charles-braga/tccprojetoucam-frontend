@@ -47,3 +47,5 @@ WrapperTransactionContainer.icons = styled.i`
   color: black;
   cursor: pointer;
 `;
+
+

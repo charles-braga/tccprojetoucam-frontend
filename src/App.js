@@ -11,7 +11,8 @@ import M from 'materialize-css';
 //import ModalUpdate from './components/ModalUpdate';
 //import Lancamentos from './components/info/Lancamentos';
 import PageDefault from './components/PageDefault/index';
-import CardDogs from './components/info/cardsDogs';
+import CardsDogs from './components/info/cardsDogs';
+import ModalNewAdoption from './components/modalNewAdoption';
 
 //css Modules
 import './components/components.modules.css';
@@ -22,7 +23,7 @@ export default function App() {
   //const [removed, setRemoved] = useState();
   const [dogs, setDogs] = useState([]);
   const [dog, setDog] = useState([]);
-  const [dropdown, setDropdown] = useState('');
+  const [dropdown, setDropdown] = useState('show');
   const [statusModal, setStatusModal] = useState(false);
 
   useEffect(() => {
@@ -33,9 +34,10 @@ export default function App() {
 
     fetchDogs();
     M.AutoInit();
-  }, [dropdown, statusModal]);
+  }, [statusModal, dropdown]);
 
-  console.log(dogs);
+
+  //console.log(dogs);
   {/*const handlePeriodSelect = (event) => {
     setCurrentPeriod(event.target.value);
   };*/}
@@ -62,8 +64,9 @@ export default function App() {
     }
   };
 
-  const handleAction = (action, adoption) => {
-    const { _id } = adoption;
+  const handleActionApp = (action, dog) => {
+    const { _id } = dog;
+    console.log(action);
     if (action === 'delete') {
       DataService.remove(_id)
         .then((response) => {
@@ -74,7 +77,7 @@ export default function App() {
         });
     } else {
       setDropdown('show');
-      //setAdoption(adoption);
+      setDog(dog);
     }
   };
 
@@ -95,26 +98,17 @@ export default function App() {
           </div>
         </div>*/}
         {/*<PainelInfo transactions={transactions} />*/}
-        {/*<div className="row valign-wrapper">
+        <div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
-            <Button onClick={showDropdown} />
-            <ModalNew
+            <ModalNewAdoption
               onChange={handleStatusModal}
-              updateAdoptions={false}
+              dog={dog}
               className={dropdown}
             />
-            <ModalUpdate
-              onChange={handleStatusModal}
-              transaction={adoption}
-              className={dropdown}
-            />
-          </div>
-          <div className="col s6 m9 noPadding">
-            <Filtro onChange={handleInputDescription} />
           </div>
         </div>
-        <Lancamentos handleAction={handleAction} transactions={transactions} />*/}
-        <CardDogs handleAction={handleAction} sendDogs={dogs} />
+        {/*<ModalNewAdoption onChange={handleStatusModal} dog={dog} className={dropdown} />*/}
+        <CardsDogs handleActionApp={handleActionApp} sendDogs={dogs} />
       </div>
     </PageDefault >
   );

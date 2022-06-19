@@ -1,9 +1,11 @@
 import React from 'react';
 import { WrapperTransactionContainer } from './styled.js';
+import IMG from '../../img/1.png';
 
 export default function CardDog({ handleAction, sendDog }) {
 
-  const { animalBreed, animalSize, animalGender, animalVaccines, animalTemperament } = sendDog;
+
+  const { _id, animalBreed, animalSize, animalGender, animalVaccines, animalDescription, animalTemperament } = sendDog;
   const color = 'rgb(161, 240, 220)';
 
   const handleActionButton = (event) => {
@@ -16,44 +18,71 @@ export default function CardDog({ handleAction, sendDog }) {
       style={{ background: color }}
       className="row valign-wrapper"
     >
-      <WrapperTransactionContainer.description className="col s4 m10">
-        <span>Tamanho:&nbsp;
+      <WrapperTransactionContainer.description className="col s6 m10">
+        <div class="card-image">
+          <img src={IMG} class="circle" height='250px' width='80%' />
+        </div>
+        <div>
           <WrapperTransactionContainer.strong>
-            {animalSize}
+            Identificação:  &nbsp;
           </WrapperTransactionContainer.strong>
-        </span>
-        <span>Temperamento: &nbsp;
+          <span>{_id}</span>
+        </div>
+        <div>
           <WrapperTransactionContainer.strong>
-            {animalTemperament}
+            Tamanho: &nbsp;
           </WrapperTransactionContainer.strong>
-        </span>
-        <span>Gênero: &nbsp;
+          <span>{animalSize}</span>
+        </div>
+        <div>
           <WrapperTransactionContainer.strong>
-            {animalGender}
+            Temperamento: &nbsp;
           </WrapperTransactionContainer.strong>
-        </span>
+          <span>{animalTemperament}</span>
+        </div>
       </WrapperTransactionContainer.description>
-      <WrapperTransactionContainer.description className="col s4 m10">
-        <span>Raça:&nbsp;
+      <WrapperTransactionContainer.description className="col s6 m10">
+        <div>
           <WrapperTransactionContainer.strong>
-            {animalBreed}
+            Descrição: &nbsp;
           </WrapperTransactionContainer.strong>
-        </span>
-        <span>Vacinas:&nbsp;
-          <ul>
-            {animalVaccines}
-          </ul>
-        </span>
+          <span>{animalDescription}</span>
+        </div>
+        <div>
+          <WrapperTransactionContainer.strong>
+            Gênero: &nbsp;
+          </WrapperTransactionContainer.strong>
+          <span>{animalGender}</span>
+        </div>
+        <div>
+          <WrapperTransactionContainer.strong>
+            Raça: &nbsp;
+          </WrapperTransactionContainer.strong>
+          <span>{animalBreed}</span>
+        </div>
+        <div>
+          <WrapperTransactionContainer.strong>
+            Vacinas: &nbsp;
+          </WrapperTransactionContainer.strong>
+          <ol>
+            <span>{animalVaccines.map((vaccine) => {
+              return (
+                <li>{vaccine}</li>
+              )
+            })}
+            </span>
+          </ol>
+        </div>
       </WrapperTransactionContainer.description>
       <WrapperTransactionContainer.buttons className="col s2 m1 noPadding">
         <span
           className="waves-effect waves-light modal-trigger"
-          data-target="modalUpdate"
+          data-target="modalNewAdoption"
           onClick={handleActionButton}
         >
           <WrapperTransactionContainer.icons
-            className="material-icons "
-            id="update"
+            className="material-icons"
+            id="newAdoption"
           >
             pets
           </WrapperTransactionContainer.icons>
@@ -68,5 +97,6 @@ export default function CardDog({ handleAction, sendDog }) {
         </span>*/}
       </WrapperTransactionContainer.buttons>
     </WrapperTransactionContainer>
+
   );
 }
