@@ -1,44 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import DataService from './services/DataService';
 import M from 'materialize-css';
-import { PERIODS } from '../src/helpers/periodo';
+//import { PERIODS } from '../src/helpers/periodo';
 
 //Components
-import PageDefault from './components/PageDefault/index';
-import PainelInfo from './components/info/PainelInfo';
+//import PainelInfo from './components/info/PainelInfo';
 //import Filtro from './components/Filtro/Filtro';
-import Button from './components/Button';
-import ModalNew from './components/ModalNew';
-import ModalUpdate from './components/ModalUpdate';
-import Lancamentos from './components/info/Lancamentos';
+//import Button from './components/Button';
+//import ModalNew from './components/ModalNew';
+//import ModalUpdate from './components/ModalUpdate';
+//import Lancamentos from './components/info/Lancamentos';
+import PageDefault from './components/PageDefault/index';
+import CardDogs from './components/info/cardsDogs';
 
 //css Modules
 import './components/components.modules.css';
 
 export default function App() {
-  //  const [searchByDescription, setSearchBydescription] = useState('');
-  const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
-  const [transactions, setTransactions] = useState([]);
-  const [adoption, setAdoption] = useState([]);
+  //const [searchByDescription, setSearchBydescription] = useState('');
+  //const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
+  //const [removed, setRemoved] = useState();
+  const [dogs, setDogs] = useState([]);
+  const [dog, setDog] = useState([]);
   const [dropdown, setDropdown] = useState('');
   const [statusModal, setStatusModal] = useState(false);
-  const [removed, setRemoved] = useState();
 
   useEffect(() => {
-    const fetchAdoptions = async () => {
-      const { data } = await DataService.getAll(
-        currentPeriod,
-      );
-      setTransactions(data);
+    const fetchDogs = async () => {
+      const { data } = await DataService.getAllDogs();
+      setDogs(data);
     };
 
-    fetchAdoptions();
+    fetchDogs();
     M.AutoInit();
-  }, [currentPeriod, statusModal]);
+  }, [dropdown, statusModal]);
 
-  const handlePeriodSelect = (event) => {
+  console.log(dogs);
+  {/*const handlePeriodSelect = (event) => {
     setCurrentPeriod(event.target.value);
-  };
+  };*/}
 
   const showDropdown = () => {
     setDropdown('show');
@@ -67,21 +67,21 @@ export default function App() {
     if (action === 'delete') {
       DataService.remove(_id)
         .then((response) => {
-          setRemoved(_id);
+          //setRemoved(_id);
         })
         .catch((e) => {
           // console.log(e);
         });
     } else {
       setDropdown('show');
-      setAdoption(adoption);
+      //setAdoption(adoption);
     }
   };
 
   return (
     <PageDefault>
       <div className="container">
-        <div className="row">
+        {/*<div className="row">
           <div className={`col s4 offset-s4`}>
             <select valor={currentPeriod} onChange={handlePeriodSelect}>
               {PERIODS.map((period) => {
@@ -93,16 +93,16 @@ export default function App() {
               })}
             </select>
           </div>
-        </div>
-        <PainelInfo transactions={transactions} />
-        <div className="row valign-wrapper">
+        </div>*/}
+        {/*<PainelInfo transactions={transactions} />*/}
+        {/*<div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
-            {/*<Button onClick={showDropdown} />*/}
-            {/*<ModalNew
+            <Button onClick={showDropdown} />
+            <ModalNew
               onChange={handleStatusModal}
               updateAdoptions={false}
               className={dropdown}
-            />*/}
+            />
             <ModalUpdate
               onChange={handleStatusModal}
               transaction={adoption}
@@ -110,11 +110,12 @@ export default function App() {
             />
           </div>
           <div className="col s6 m9 noPadding">
-            {/*<Filtro onChange={handleInputDescription} />*/}
+            <Filtro onChange={handleInputDescription} />
           </div>
         </div>
-        <Lancamentos handleAction={handleAction} transactions={transactions} />
+        <Lancamentos handleAction={handleAction} transactions={transactions} />*/}
+        <CardDogs handleAction={handleAction} sendDogs={dogs} />
       </div>
-    </PageDefault>
+    </PageDefault >
   );
 }
