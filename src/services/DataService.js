@@ -10,6 +10,7 @@ const getAll = (currentPeriod) => {
 };
 
 const newAdoption = (data) => {
+  console.log(data);
   return axios.post(
     `${baseURL}/adoption`, data
   );

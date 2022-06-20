@@ -4,7 +4,7 @@ import DataService from '../services/DataService.js';
 export default function ModalNewAdoption({ onChange, dog }) {
 
   const initialAdoptionState = {
-    animalID: dog._id,
+    animalID: '',
     userName: '',
     yearMonthDay: '',
   };
@@ -17,6 +17,7 @@ export default function ModalNewAdoption({ onChange, dog }) {
   const [newAdoption, setNewAdoption] = useState(initialAdoptionState);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  newAdoption.animalID = dog._id;
 
   useEffect(() => {
     const handleDate = () => {
@@ -43,6 +44,7 @@ export default function ModalNewAdoption({ onChange, dog }) {
     }
     setNewUser({ ...newUser, [name]: type });
   };*/}
+
 
 
 
@@ -155,11 +157,10 @@ export default function ModalNewAdoption({ onChange, dog }) {
                 name="animalId"
                 type="text"
                 className="validate form-control"
-                value={dog._id}
+                value={newAdoption.animalID}
                 placeholder={dog._id}
                 onChange={handleInputChange}
                 autoFocus
-                autoComplete
               />
               <label htmlFor="name">Animal</label>
             </div>

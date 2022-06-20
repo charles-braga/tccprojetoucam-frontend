@@ -3,10 +3,14 @@ import { WrapperTransactionContainer } from './styled.js';
 
 export default function Lancamento({ handleAction, transaction }) {
 
-  const { day, animalName, userName, status } = transaction;
+  const { day, animalID, userName, yearMonthDay, status } = transaction;
   const color = status === 'nao-realizada' ? 'rgb(240, 161, 168)' : 'rgb(161, 240, 220)';
   const icon = status === 'realizada' ? 'check' : 'block'
-  const adoptionFinished = status === 'realizada' ? 'realizada' : 'não finalizada'
+  //const adoptionFinished = status === 'realizada' ? 'realizada' : 'não finalizada'
+
+  const date = yearMonthDay;
+  const resultDate = date.split("-", 3);
+  const finalDate = resultDate.reverse().join('/');
 
   const handleActionButton = (event) => {
     const action = event.target.id;
@@ -24,7 +28,7 @@ export default function Lancamento({ handleAction, transaction }) {
       <WrapperTransactionContainer.description className="col s8 m10">
         <span>Cão adotado:&nbsp;
           <WrapperTransactionContainer.strong>
-            {animalName}
+            {animalID}
           </WrapperTransactionContainer.strong>
         </span>
         <span>Adotado por:&nbsp;
@@ -32,9 +36,9 @@ export default function Lancamento({ handleAction, transaction }) {
             {userName}
           </WrapperTransactionContainer.strong>
         </span>
-        <span>Status: &nbsp;
+        <span>Data da adoção: &nbsp;
           <WrapperTransactionContainer.strong>
-            {adoptionFinished}
+            {finalDate}
           </WrapperTransactionContainer.strong>
         </span>
       </WrapperTransactionContainer.description>
