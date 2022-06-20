@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3500/api';
+const baseURL = 'https://tccucam.herokuapp.com/api';
 
 //Inicio das funções de manipulação das adoções ************
 const getAll = (currentPeriod) => {
