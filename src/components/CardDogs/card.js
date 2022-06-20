@@ -1,17 +1,21 @@
 import React from 'react';
 import { WrapperTransactionContainer } from './styled.js';
-import IMG from '../../img/1.png';
-
-export default function CardDog({ handleAction, sendDog }) {
 
 
+export default function CardDog({ handleAction, sendDog, picture }) {
   const { _id, animalBreed, animalSize, animalGender, animalVaccines, animalDescription, animalTemperament } = sendDog;
   const color = 'rgb(161, 240, 220)';
+
+
+  const IMG = "../../image/".concat(picture);
+  console.log(IMG);
 
   const handleActionButton = (event) => {
     const action = event.target.id;
     handleAction(action, sendDog);
   };
+
+
 
   return (
     <WrapperTransactionContainer
@@ -20,7 +24,7 @@ export default function CardDog({ handleAction, sendDog }) {
     >
       <WrapperTransactionContainer.description className="col s6 m10">
         <div class="card-image">
-          <img src={IMG} class="circle" height='250px' width='80%' />
+          <img src={IMG} className="circle" height='250px' width='80%' />
         </div>
         <div>
           <WrapperTransactionContainer.strong>
