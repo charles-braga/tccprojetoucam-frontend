@@ -8,12 +8,12 @@ export default function CardDog({ handleAction, sendDog }) {
   const color = 'rgb(161, 240, 220)';
 
 
-  const IMG = "../../assets/image/".concat(picture);
+  //const IMG = "../../assets/image/".concat(picture);
   //console.log(IMG);
 
   const handleActionButton = (event) => {
     const action = event.target.id;
-    handleAction(action, sendDog, IMG);
+    handleAction(action, sendDog);
   };
 
 
