@@ -1,5 +1,6 @@
 import React from 'react';
 import { WrapperTransactionContainer } from './styled.js';
+import image from '../../assets/image/1.png';
 
 
 export default function CardDog({ handleAction, sendDog }) {
@@ -24,7 +25,7 @@ export default function CardDog({ handleAction, sendDog }) {
     >
       <WrapperTransactionContainer.description className="col s6 m10">
         <div class="card-image">
-          <img src={IMG} className="circle responsible-img" height='250px' width='80%' />
+          <img src={image} className="circle responsible-img" height='250px' width='80%' />
         </div>
         <div>
           <WrapperTransactionContainer.strong>
