@@ -16,8 +16,6 @@ export default function CardDog({ handleAction, sendDog }) {
     handleAction(action, sendDog);
   };
 
-
-
   return (
     <WrapperTransactionContainer
       style={{ background: color }}
@@ -25,7 +23,7 @@ export default function CardDog({ handleAction, sendDog }) {
     >
       <WrapperTransactionContainer.description className="col s6 m10">
         <div class="card-image">
-          <img src={image} className="circle responsible-img" height='250px' width='80%' />
+          <img src={`http://localhost:3500/static/${picture}`} className="circle responsible-img" height='250px' width='80%' />
         </div>
         <div>
           <WrapperTransactionContainer.strong>
