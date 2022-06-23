@@ -1,6 +1,6 @@
 import React from 'react';
 import { WrapperTransactionContainer } from './styled.js';
-import image from '../../assets/image/1.png';
+//import image from '../../assets/image/1.png';
 
 
 export default function CardDog({ handleAction, sendDog }) {
