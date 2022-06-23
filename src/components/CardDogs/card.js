@@ -1,15 +1,9 @@
 import React from 'react';
 import { WrapperTransactionContainer } from './styled.js';
-//import image from '../../assets/image/1.png';
-
 
 export default function CardDog({ handleAction, sendDog }) {
   const { _id, animalBreed, animalSize, animalGender, animalVaccines, animalDescription, animalTemperament, picture } = sendDog;
   const color = 'rgb(161, 240, 220)';
-
-
-  //const IMG = "../../assets/image/".concat(picture);
-  //console.log(IMG);
 
   const handleActionButton = (event) => {
     const action = event.target.id;
@@ -90,14 +84,6 @@ export default function CardDog({ handleAction, sendDog }) {
             pets
           </WrapperTransactionContainer.icons>
         </span>
-        {/*<span className="waves-effect waves-light" onClick={handleActionButton}>
-          <WrapperTransactionContainer.icons
-            className="material-icons "
-            id="delete"
-          >
-            delete
-          </WrapperTransactionContainer.icons>
-        </span>*/}
       </WrapperTransactionContainer.buttons>
     </WrapperTransactionContainer>
 

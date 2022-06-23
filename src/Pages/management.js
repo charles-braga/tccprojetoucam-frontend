@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import DataService from '../services/DataService';
 import M from 'materialize-css';
-//import { PERIODS } from '../helpers/periodo';
 
 //Components
-//import PainelInfo from '../components/info/PainelInfo';
-//import Filtro from '../components/Filtro/Filtro';
-//import Lancamentos from '../components/info/Lancamentos';
 import PageDefault from '../components/PageDefault/index';
 import ButtonUser from '../components/ButtonUser';
 import ModalNewUser from '../components/modalNewUser';
@@ -17,8 +13,6 @@ import ModalUpdateUser from '../components/modalUpdateUser';
 import '../components/components.modules.css';
 
 export default function App() {
-  //const [searchByDescription, setSearchBydescription] = useState('');
-  //const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState([]);
   const [dropdown, setDropdown] = useState('');
@@ -35,11 +29,6 @@ export default function App() {
     M.AutoInit();
   }, [statusModal, removed, dropdown]);
 
-
-  {/*const handlePeriodSelect = (event) => {
-    setCurrentPeriod(event.target.value);
-  };*/}
-
   const showDropdown = () => {
     setDropdown('show');
     document.addEventListener('click', closeDropdown);
@@ -49,10 +38,6 @@ export default function App() {
     setDropdown('');
     document.removeEventListener('click', closeDropdown);
   };
-
-  /*const handleInputDescription = (newText) => {
-    setSearchBydescription(newText);
-  };*/
 
   const handleStatusModal = (status) => {
     if (status === true && statusModal === true) {
@@ -81,20 +66,6 @@ export default function App() {
   return (
     <PageDefault>
       <div className="container">
-        {/*<div className="row">
-          <div className={`col s4 offset-s4`}>
-            <select valor={currentPeriod} onChange={handlePeriodSelect}>
-              {PERIODS.map((period) => {
-                return (
-                  <option key={period} value={period}>
-                    {period}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-        </div>
-        <PainelInfo transactions={transactions} />*/}
         <div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
             <ButtonUser onClick={showDropdown} />
@@ -110,7 +81,6 @@ export default function App() {
             />
           </div>
           <div className="col s6 m9 noPadding">
-
           </div>
         </div>
         <CardsUsers handleAction={handleAction} sendUsers={users} />

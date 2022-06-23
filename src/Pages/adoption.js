@@ -6,9 +6,6 @@ import { PERIODS } from '../helpers/periodo';
 //Components
 import PageDefault from '../components/PageDefault/index';
 import PainelInfo from '../components/info/PainelInfo';
-//import Filtro from '../components/Filtro/Filtro';
-import Button from '../components/Button';
-import ModalNew from '../components/ModalNew';
 import ModalUpdate from '../components/ModalUpdate';
 import Lancamentos from '../components/info/Lancamentos';
 
@@ -16,7 +13,6 @@ import Lancamentos from '../components/info/Lancamentos';
 import '../components/components.modules.css';
 
 export default function App() {
-  //  const [searchByDescription, setSearchBydescription] = useState('');
   const [currentPeriod, setCurrentPeriod] = useState(PERIODS[0]);
   const [transactions, setTransactions] = useState([]);
   const [adoption, setAdoption] = useState([]);
@@ -49,10 +45,6 @@ export default function App() {
     setDropdown('');
     document.removeEventListener('click', closeDropdown);
   };
-
-  /*const handleInputDescription = (newText) => {
-    setSearchBydescription(newText);
-  };*/
 
   const handleStatusModal = (status) => {
     if (status === true && statusModal === true) {
@@ -97,20 +89,11 @@ export default function App() {
         <PainelInfo transactions={transactions} />
         <div className="row valign-wrapper">
           <div className="col s6  m3  noPadding">
-            {/*<Button onClick={showDropdown} />*/}
-            {/*<ModalNew
-              onChange={handleStatusModal}
-              updateAdoptions={false}
-              className={dropdown}
-            />*/}
             <ModalUpdate
               onChange={handleStatusModal}
               transaction={adoption}
               className={dropdown}
             />
-          </div>
-          <div className="col s6 m9 noPadding">
-            {/*<Filtro onChange={handleInputDescription} />*/}
           </div>
         </div>
         <Lancamentos handleAction={handleAction} transactions={transactions} />

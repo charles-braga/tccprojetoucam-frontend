@@ -5,8 +5,7 @@ export default function Lancamento({ handleAction, transaction }) {
 
   const { day, animalID, userName, yearMonthDay, status } = transaction;
   const color = status === 'nao-realizada' ? 'rgb(240, 161, 168)' : 'rgb(161, 240, 220)';
-  const icon = status === 'realizada' ? 'check' : 'block'
-  //const adoptionFinished = status === 'realizada' ? 'realizada' : 'não finalizada'
+  const icon = 'check'
 
   const date = yearMonthDay;
   const resultDate = date.split("-", 3);
@@ -43,18 +42,6 @@ export default function Lancamento({ handleAction, transaction }) {
         </span>
       </WrapperTransactionContainer.description>
       <WrapperTransactionContainer.buttons className="col s2 m1 noPadding">
-        {/*<span
-          className="waves-effect waves-light modal-trigger"
-          data-target="modalUpdate"
-          onClick={handleActionButton}
-        >
-          <WrapperTransactionContainer.icons
-            className="material-icons "
-            id="update"
-          >
-            update
-          </WrapperTransactionContainer.icons>
-        </span>*/}
         <span className="waves-effect waves-light" onClick={handleActionButton}>
           <WrapperTransactionContainer.icons
             className="material-icons"
